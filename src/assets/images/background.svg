@@ -1,0 +1,89 @@
+<svg width="100%" height="100%" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" style="background-color: #02000d;">
+    <defs>
+        <!-- Background Gradient -->
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#01000a" />
+            <stop offset="40%" stop-color="#030217" />
+            <stop offset="100%" stop-color="#08072b" />
+        </linearGradient>
+
+        <!-- Glow Filters -->
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="15" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <filter id="heavyGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="45" />
+        </filter>
+
+        <!-- Wave Gradients for Light Trails -->
+        <linearGradient id="waveGrad1" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#4f8aff" stop-opacity="0.85" />
+            <stop offset="45%" stop-color="#123bb5" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#00072b" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="waveGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1ae2ff" stop-opacity="0.9" />
+            <stop offset="50%" stop-color="#0055ff" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#00072d" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="waveGrad3" x1="100%" y1="10%" x2="20%" y2="100%">
+            <stop offset="0%" stop-color="#73a2ff" stop-opacity="0.7" />
+            <stop offset="60%" stop-color="#11298a" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#01020a" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- Corner Shadow Overlay -->
+        <radialGradient id="shadowOverlay" cx="0%" cy="100%" r="100%">
+            <stop offset="0%" stop-color="#000000" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#000000" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+
+    <!-- Base Background -->
+    <rect width="1600" height="900" fill="url(#bgGrad)" />
+
+    <!-- Ambient Backlight -->
+    <ellipse cx="1400" cy="700" rx="750" ry="350" fill="#0d1b54" opacity="0.3" filter="url(#heavyGlow)" transform="rotate(-30 1400 700)" />
+    <ellipse cx="1200" cy="500" rx="850" ry="250" fill="#082366" opacity="0.25" filter="url(#heavyGlow)" transform="rotate(-35 1200 500)" />
+
+    <!-- Sweeping Light Trails -->
+    <g fill="none" stroke-linecap="round">
+        <!-- Ambient diffuse waves -->
+        <path d="M 1800 -100 Q 1200 500 200 1000" stroke="url(#waveGrad1)" stroke-width="120" filter="url(#glow)" opacity="0.35" />
+        <path d="M 1800 150 Q 1300 700 500 1000" stroke="url(#waveGrad3)" stroke-width="80" filter="url(#glow)" opacity="0.4" />
+        <path d="M 1800 400 Q 1400 850 900 1000" stroke="url(#waveGrad1)" stroke-width="100" filter="url(#glow)" opacity="0.3" />
+
+        <!-- Sharp luminescent core lines -->
+        <!-- Line 1 -->
+        <path d="M 1700 -50 Q 1150 550 300 950" stroke="url(#waveGrad2)" stroke-width="2.5" opacity="0.8" />
+        <path d="M 1700 -50 Q 1150 550 300 950" stroke="url(#waveGrad1)" stroke-width="12" opacity="0.6" filter="url(#glow)" />
+
+        <!-- Line 2 (Main bright curve) -->
+        <path d="M 1700 100 Q 1250 650 450 950" stroke="url(#waveGrad2)" stroke-width="3" opacity="0.9" />
+        <path d="M 1700 100 Q 1250 650 450 950" stroke="url(#waveGrad1)" stroke-width="16" opacity="0.75" filter="url(#glow)" />
+
+        <!-- Line 3 -->
+        <path d="M 1700 250 Q 1350 750 650 950" stroke="url(#waveGrad2)" stroke-width="1.5" opacity="0.7" />
+
+        <!-- Line 4 -->
+        <path d="M 1700 400 Q 1450 850 900 950" stroke="url(#waveGrad2)" stroke-width="3.5" opacity="0.85" />
+        <path d="M 1700 400 Q 1450 850 900 950" stroke="url(#waveGrad1)" stroke-width="10" opacity="0.5" filter="url(#glow)" />
+
+        <!-- Line 5 (Soft bottom curve) -->
+        <path d="M 1700 550 Q 1550 950 1200 1000" stroke="url(#waveGrad3)" stroke-width="2" opacity="0.6" />
+
+        <!-- Extra accent lines -->
+        <path d="M 1700 180 Q 1280 700 550 950" stroke="#87c0ff" stroke-width="1" opacity="0.6" />
+        <path d="M 1700 320 Q 1400 800 750 950" stroke="#4f8aff" stroke-width="1.5" opacity="0.5" />
+    </g>
+
+    <!-- Edge Shadowing to frame the center content -->
+    <rect width="1600" height="900" fill="url(#shadowOverlay)" pointer-events="none" />
+</svg>
