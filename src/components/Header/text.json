@@ -1,0 +1,20 @@
+{
+  "hu": {
+    "title": "Illés Krisztina Író",
+    "menuAria": "Menunyitás",
+    "home": "Kezdőlap",
+    "works": "Művek",
+    "about": "Rólam",
+    "contact": "Kapcsolat",
+    "language": "Nyelv"
+  },
+  "en": {
+    "title": "Krisztina Illés Writer",
+    "menuAria": "Open menu",
+    "home": "Home",
+    "works": "Works",
+    "about": "About Me",
+    "contact": "Contact",
+    "language": "Language"
+  }
+}

@@ -1,0 +1,28 @@
+.option-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ccc;
+  border-radius: 25px;
+  padding: 10px 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  margin: 10px 10px;
+}
+
+.option-button:hover {
+  border-color: #ffffff;
+  transform: scale(1.05);
+}
+
+.option-button a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

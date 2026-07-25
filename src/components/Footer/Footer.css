@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer layout: left and right columns */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* left block left, right block right */
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem; /* adjust padding as needed */
+}
+
+.footer-texts-left,
+.footer-texts-right {
+    display: flex;
+    flex-direction: column; /* stack children vertically */
+    gap: 0.25rem;
+}
+
+.footer-texts-left {
+    align-items: flex-start; /* anchor texts to the left */
+}
+
+.footer-texts-right {
+    align-items: flex-end; /* anchor texts to the right */
+}
+
+.footer-text {
+    display: block;
+}
+
+.footer-texts-left .footer-text {
+    text-align: left;
+}
+
+.footer-texts-right .footer-text {
+    text-align: right;
+}
+
+/* Make mailto link visually clear and accessible */
+.footer-container a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* Responsive: smaller text and stacked layout on narrow screens */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .footer-text {
+        font-size: 0.9rem; /* slightly smaller on mobile */
+    }
+
+    .footer-texts-right {
+        align-items: flex-start;
+    }
+}
